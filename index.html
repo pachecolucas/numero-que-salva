@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Meu número que salva</title>
+    </head>
+    <body>
+        <h1>-</h1>
+        <button onclick="aumentar()">aumentar</button>
+        <script>
+            let numero = localStorage.getItem('numero')
+
+            function aumentar() {
+                numero++
+                render()
+                persistir()
+            }
+
+            function render() {
+                const h1 = document.querySelector("h1")
+                h1.innerText = numero
+            }
+
+            function persistir() {
+                localStorage.setItem('numero', numero)
+            }
+
+            render()
+        </script>
+    </body>
+</html>
